@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.2\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.2\build\Xamarin.Build.Download.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D16655E8-6A7A-4E3E-A9F2-43AC4BF62006}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>XamarinNativeFullDemo.Droid</RootNamespace>
+    <AssemblyName>XamarinNativeFullDemo.Droid</AssemblyName>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+<EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
+<AndroidUseSharedRuntime>true</AndroidUseSharedRuntime>
+<AndroidSupportedAbis>arm64-v8a;armeabi;armeabi-v7a;x86;x86_64</AndroidSupportedAbis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="System.Json" />
+    <Reference Include="FortySevenDeg.SwipeListView">
+      <HintPath>..\packages\FortySevenDeg.SwipeListView.2.0.0.2\lib\FortySevenDeg.SwipeListView.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="FastAndroidCamera">
+      <HintPath>..\packages\FastAndroidCamera.2.0.0\lib\MonoAndroid403\FastAndroidCamera.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Core">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.2.9\lib\MonoAndroid403\ZXing.Net.Mobile.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.portable">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.2.9\lib\MonoAndroid403\zxing.portable.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXingNetMobile">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.2.9\lib\MonoAndroid403\ZXingNetMobile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="Xamarin.Android.Support.Compat">
+      <HintPath>..\packages\Xamarin.Android.Support.Compat.25.1.0\lib\MonoAndroid70\Xamarin.Android.Support.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.UI">
+      <HintPath>..\packages\Xamarin.Android.Support.Core.UI.25.1.0\lib\MonoAndroid70\Xamarin.Android.Support.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.Utils">
+      <HintPath>..\packages\Xamarin.Android.Support.Core.Utils.25.1.0\lib\MonoAndroid70\Xamarin.Android.Support.Core.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Media.Compat">
+      <HintPath>..\packages\Xamarin.Android.Support.Media.Compat.25.1.0\lib\MonoAndroid70\Xamarin.Android.Support.Media.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Fragment">
+      <HintPath>..\packages\Xamarin.Android.Support.Fragment.25.1.0\lib\MonoAndroid70\Xamarin.Android.Support.Fragment.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.25.1.0\lib\MonoAndroid70\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Basement">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Basement.42.1021.1\lib\MonoAndroid70\Xamarin.GooglePlayServices.Basement.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Ads.Lite">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Ads.Lite.42.1021.1\lib\MonoAndroid70\Xamarin.GooglePlayServices.Ads.Lite.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helpers\AndroidLocalizator.cs" />
+    <Compile Include="Adapters\CT1Adapter.cs" />
+    <Compile Include="Adapters\CT1Item.cs" />
+    <Compile Include="Helpers\ListExtensions.cs" />
+    <Compile Include="Helpers\DroidFileSystem.cs" />
+    <Compile Include="Adapters\CT1TextAdapter.cs" />
+    <Compile Include="Activities\CalculationActivity.cs" />
+    <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Activities\BrandActivity.cs" />
+    <Compile Include="Activities\ClothesActivity.cs" />
+    <Compile Include="Helpers\AlertHelper.cs" />
+    <Compile Include="Adapters\CT1ActionAdapter.cs" />
+    <Compile Include="Activities\AdvertActivity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Main.axml" />
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\values\Styles.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\clear.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\clear.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\clear.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\clear.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\clear.png" />
+    <AndroidResource Include="Resources\layout\toolbar.xml" />
+    <AndroidResource Include="Resources\menu\main_menu.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\add.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\add.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\add.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\add.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\add.png" />
+    <AndroidResource Include="Resources\layout\CT1.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\next.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\next.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\next.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\next.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\next.png" />
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\adidas.png">
+      <Link>Resources\drawable\adidas.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\cropp.png">
+      <Link>Resources\drawable\cropp.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\default_account.png">
+      <Link>Resources\drawable\default_account.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\general.png">
+      <Link>Resources\drawable\general.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\jacket.png">
+      <Link>Resources\drawable\jacket.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\jacket_icon.png">
+      <Link>Resources\drawable\jacket_icon.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\new_balance.png">
+      <Link>Resources\drawable\new_balance.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\next.png">
+      <Link>Resources\drawable\next.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\nike.png">
+      <Link>Resources\drawable\nike.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\pants.png">
+      <Link>Resources\drawable\pants.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\pants_icon.png">
+      <Link>Resources\drawable\pants_icon.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\puma.png">
+      <Link>Resources\drawable\puma.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\reebok.png">
+      <Link>Resources\drawable\reebok.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\shirt.png">
+      <Link>Resources\drawable\shirt.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\shirt_icon.png">
+      <Link>Resources\drawable\shirt_icon.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\shoes.png">
+      <Link>Resources\drawable\shoes.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\shoes_icon.png">
+      <Link>Resources\drawable\shoes_icon.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\size_female.png">
+      <Link>Resources\drawable\size_female.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\size_female_fit.png">
+      <Link>Resources\drawable\size_female_fit.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\size_mail_fit.png">
+      <Link>Resources\drawable\size_mail_fit.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\sizes.png">
+      <Link>Resources\drawable\sizes.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\sweater.png">
+      <Link>Resources\drawable\sweater.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\sweater_icon.png">
+      <Link>Resources\drawable\sweater_icon.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\topsecret.png">
+      <Link>Resources\drawable\topsecret.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\tshirt.png">
+      <Link>Resources\drawable\tshirt.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\tshirt_icon.png">
+      <Link>Resources\drawable\tshirt_icon.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CT1Text.axml" />
+    <AndroidResource Include="Resources\layout\Calculation.axml" />
+    <AndroidResource Include="Resources\drawable\icon_info.png" />
+    <AndroidResource Include="Resources\drawable\back_bordered.xml" />
+    <AndroidResource Include="Resources\drawable\button_bordered.xml" />
+    <AndroidResource Include="Resources\drawable\search_rounded.xml" />
+    <AndroidResource Include="Resources\drawable\textedit_bordered.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\back.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\edit.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\back.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\edit.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\back.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\edit.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\back.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\edit.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\back.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\edit.png" />
+    <AndroidResource Include="Resources\menu\edit_menu.xml" />
+    <AndroidResource Include="Resources\layout\Accounts.axml" />
+    <AndroidResource Include="Resources\layout\CT1Action.axml" />
+    <AndroidResource Include="Resources\drawable\edit_text_selector.xml" />
+    <AndroidResource Include="Resources\values\Colors.xml" />
+    <AndroidResource Include="Resources\values\Dimens.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\save.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\save.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\save.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\save.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\save.png" />
+    <AndroidResource Include="Resources\values-uk\Strings.xml" />
+    <AndroidResource Include="Resources\values-ru\Strings.xml" />
+    <AndroidResource Include="Resources\drawable\single_border.xml" />
+    <AndroidResource Include="Resources\menu\popup_menu.xml" />
+    <AndroidResource Include="Resources\drawable\right_button_border.xml" />
+    <AndroidResource Include="Resources\drawable\solid_shape.xml" />
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\house.png">
+      <Link>Resources\drawable\house.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\bershka.png">
+      <Link>Resources\drawable\bershka.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\mango.png">
+      <Link>Resources\drawable\mango.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\massimo_dutti.png">
+      <Link>Resources\drawable\massimo_dutti.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\pull_and_bear.png">
+      <Link>Resources\drawable\pull_and_bear.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\stradivarius.png">
+      <Link>Resources\drawable\stradivarius.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\zara.png">
+      <Link>Resources\drawable\zara.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\terranova.png">
+      <Link>Resources\drawable\terranova.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\colins.png">
+      <Link>Resources\drawable\colins.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\columbia.png">
+      <Link>Resources\drawable\columbia.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\levis.png">
+      <Link>Resources\drawable\levis.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\ltb.png">
+      <Link>Resources\drawable\ltb.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\ostin.png">
+      <Link>Resources\drawable\ostin.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\reserved.png">
+      <Link>Resources\drawable\reserved.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\sinsay.png">
+      <Link>Resources\drawable\sinsay.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\springfield.png">
+      <Link>Resources\drawable\springfield.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\timberland.png">
+      <Link>Resources\drawable\timberland.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\XamarinNativeFullDemo\Icons\waikiki.png">
+      <Link>Resources\drawable\waikiki.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\banner.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+    <Folder Include="Resources\menu\" />
+    <Folder Include="Adapters\" />
+    <Folder Include="Resources\drawable\" />
+    <Folder Include="Activities\" />
+    <Folder Include="Resources\values-uk\" />
+    <Folder Include="Resources\values-ru\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="..\XamarinNativeFullDemo\DataBase\.DS_Store">
+      <Link>Assets\DataBase\.DS_Store</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\XamarinNativeFullDemo\DataBase\AccountData\Igor_Golovchuk_data.json">
+      <Link>Assets\DataBase\AccountData\Igor_Golovchuk_data.json</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\XamarinNativeFullDemo\DataBase\Accounts\Igor_Golovchuk.json">
+      <Link>Assets\DataBase\Accounts\Igor_Golovchuk.json</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\XamarinNativeFullDemo\DataBase\Brands\BrandData_female.json">
+      <Link>Assets\DataBase\Brands\BrandData_female.json</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\XamarinNativeFullDemo\DataBase\Brands\BrandData_male.json">
+      <Link>Assets\DataBase\Brands\BrandData_male.json</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\XamarinNativeFullDemo\DataBase\Brands\BrandList.json">
+      <Link>Assets\DataBase\Brands\BrandList.json</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\XamarinNativeFullDemo\DataBase\Clothes\ClothesTypeList.json">
+      <Link>Assets\DataBase\Clothes\ClothesTypeList.json</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <Import Project="..\XamarinNativeFullDemo\XamarinNativeFullDemo.projitems" Label="Shared" Condition="Exists('..\XamarinNativeFullDemo\XamarinNativeFullDemo.projitems')" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.2\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.2\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Compat.25.1.0\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.25.1.0\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.UI.25.1.0\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.UI.25.1.0\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.Utils.25.1.0\build\MonoAndroid70\Xamarin.Android.Support.Core.Utils.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.Utils.25.1.0\build\MonoAndroid70\Xamarin.Android.Support.Core.Utils.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Media.Compat.25.1.0\build\MonoAndroid70\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Media.Compat.25.1.0\build\MonoAndroid70\Xamarin.Android.Support.Media.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Fragment.25.1.0\build\MonoAndroid70\Xamarin.Android.Support.Fragment.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Fragment.25.1.0\build\MonoAndroid70\Xamarin.Android.Support.Fragment.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v4.25.1.0\build\MonoAndroid70\Xamarin.Android.Support.v4.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v4.25.1.0\build\MonoAndroid70\Xamarin.Android.Support.v4.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Basement.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Basement.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Basement.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Ads.Lite.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Ads.Lite.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Ads.Lite.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Ads.Lite.targets')" />
+</Project>

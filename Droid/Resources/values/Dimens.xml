@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+
+    <!-- Default -->
+    <dimen name="row_height">64dp</dimen>
+    <dimen name="row_text_size">20sp</dimen>
+
+    <!-- Products -->
+    <dimen name="search_padding">-4dp</dimen>
+    <dimen name="search_radius">10dp</dimen>
+
+	<!-- Account -->
+    <dimen name="delete_margin">27dp</dimen>
+
+</resources>

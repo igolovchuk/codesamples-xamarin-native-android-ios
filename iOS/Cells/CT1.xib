@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
+            <connections/>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="64" id="cxk-wN-pdQ" customClass="CT1" reuseIdentifier="CT1" accessoryType="disclosureIndicator">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxk-wN-pdQ" id="YTl-1W-gDM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2" translatesAutoresizingMaskIntoConstraints="NO">
+                        <rect key="frame" x="16" y="10" width="47" height="43"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <constraints>
+                            <constraint id="112" firstAttribute="width" constant="47"/>
+                            <constraint id="113" firstAttribute="height" constant="43"/>
+                            <constraint id="121" firstAttribute="width" secondItem="2" secondAttribute="height" multiplier="47:43"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" id="8" translatesAutoresizingMaskIntoConstraints="NO" baselineAdjustment="alignBaselines" misplaced="YES">
+                        <rect key="frame" x="79" y="16" width="182" height="36"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <constraints>
+                            <constraint id="116" firstAttribute="width" constant="182"/>
+                            <constraint id="117" firstAttribute="height" constant="36"/>
+                        </constraints>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint id="110" firstItem="2" firstAttribute="centerY" secondItem="YTl-1W-gDM" secondAttribute="centerY"/>
+                    <constraint id="111" firstItem="2" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" constant="16"/>
+                    <constraint id="114" firstItem="YTl-1W-gDM" firstAttribute="trailing" secondItem="8" secondAttribute="trailing" constant="25"/>
+                    <constraint id="115" firstItem="YTl-1W-gDM" firstAttribute="bottom" secondItem="8" secondAttribute="bottom" constant="10"/>
+                    <constraint id="118" firstItem="8" firstAttribute="leading" secondItem="2" secondAttribute="trailing" constant="16"/>
+                    <constraint id="119" firstItem="8" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="top" constant="16"/>
+                    <constraint id="120" firstItem="YTl-1W-gDM" firstAttribute="trailing" secondItem="8" secondAttribute="trailing" constant="25"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgLogo" destination="2" id="name-outlet-2"/>
+                <outlet property="lblName" destination="8" id="name-outlet-8"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="next.png" width="150" height="150"/>
+        <image name="new_balance.png" width="156" height="156"/>
+        <image name="default_account.png" width="500" height="500"/>
+        <image name="sizes.png" width="200" height="450"/>
+        <image name="size_female.png" width="200" height="450"/>
+        <image name="size_female_fit.png" width="200" height="450"/>
+        <image name="size_mail_fit.png" width="200" height="450"/>
+        <image name="shoes.png" width="160" height="93"/>
+        <image name="sweater.png" width="150" height="150"/>
+        <image name="tshirt.png" width="147" height="160"/>
+        <image name="shirt.png" width="120" height="146"/>
+        <image name="jacket.png" width="125" height="137"/>
+        <image name="pants.png" width="150" height="150"/>
+        <image name="adidas.png" width="150" height="99"/>
+        <image name="general.png" width="67" height="61"/>
+        <image name="nike.png" width="162" height="121"/>
+        <image name="puma.png" width="179" height="159"/>
+        <image name="reebok.png" width="169" height="150"/>
+        <image name="topsecret.png" width="67" height="61"/>
+        <image name="cropp.png" width="150" height="150"/>
+        <image name="jacket_icon.png" width="150" height="150"/>
+        <image name="pants_icon.png" width="225" height="213"/>
+        <image name="shirt_icon.png" width="140" height="157"/>
+        <image name="shoes_icon.png" width="161" height="151"/>
+        <image name="sweater_icon.png" width="298" height="290"/>
+        <image name="tshirt_icon.png" width="228" height="220"/>
+    </resources>
+</document>

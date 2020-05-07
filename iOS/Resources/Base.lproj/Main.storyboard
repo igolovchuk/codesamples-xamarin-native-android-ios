@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="AccountVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="2793" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="26" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Accounts" id="2794">
+                                        <barButtonItem key="rightBarButtonItem" id="3010" systemItem="add">
+                                            <connections>
+                                                <action selector="btnAdd_Click:" destination="BYZ-38-t0r" id="3013"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" id="3016" systemItem="stop">
+                                            <connections>
+                                                <action selector="btnExit_Click:" destination="BYZ-38-t0r" id="3017"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <constraints>
+                                    <constraint id="2797" firstAttribute="width" constant="375"/>
+                                </constraints>
+                                <color key="barTintColor" colorSpace="calibratedRGB" red="0.074509803921568626" green="0.36078431372549019" blue="0.30196078431372547" alpha="1"/>
+                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" id="2798" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="70" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="2799"/>
+                                </connections>
+                                <constraints>
+                                    <constraint id="2809" firstAttribute="width" constant="375"/>
+                                </constraints>
+                                <color key="barTintColor" colorSpace="calibratedRGB" red="0.15686274509803921" green="0.35294117647058826" blue="0.30588235294117649" alpha="1"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="2810" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="-9" y="116" width="377" height="544"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2811" rowHeight="56">
+                                        <rect key="frame" x="0.0" y="28" width="377" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2811" id="2812">
+                                            <rect key="frame" x="0.0" y="0.0" width="377" height="55"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <constraints>
+                                    <constraint id="3525" firstAttribute="width" constant="377"/>
+                                    <constraint id="3526" firstAttribute="height" constant="544"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint id="2795" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="2793" secondAttribute="trailing"/>
+                            <constraint id="2796" firstItem="2793" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="26"/>
+                            <constraint id="2807" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="2798" secondAttribute="trailing"/>
+                            <constraint id="2808" firstItem="2798" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="70"/>
+                            <constraint id="2867" firstItem="2793" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
+                            <constraint id="3523" firstItem="2810" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-9"/>
+                            <constraint id="3524" firstItem="8bC-Xf-vdC" firstAttribute="bottom" secondItem="2810" secondAttribute="bottom" constant="7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="2784" id="2783"/>
+                        <outlet property="searchDisplayController" destination="2801" id="2800"/>
+                        <outlet property="searchBar" destination="2798" id="name-outlet-2798"/>
+                        <outlet property="navBar" destination="2793" id="name-outlet-2793"/>
+                        <outlet property="tableView" destination="2810" id="name-outlet-2810"/>
+                        <segue id="3003" destination="2893" kind="show" identifier="AccountToBrand"/>
+                        <segue id="3315" destination="8" kind="show" identifier="AccountToCalc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="2784">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="2785"/>
+                        <outlet property="searchBar" destination="2781" id="2786"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="2787"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="2788"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="2789"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="2801">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="2802"/>
+                        <outlet property="searchBar" destination="2798" id="2803"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="2804"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="2805"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="2806"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Calculation View Controller-->
+        <scene sceneID="7">
+            <objects>
+                <viewController storyboardIdentifier="CalcVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8" customClass="CalculationVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5"/>
+                        <viewControllerLayoutGuide type="bottom" id="6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumFontSize="17" id="3108" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" textAlignment="center" placeholder="Enter Your Name">
+                                <rect key="frame" x="66" y="38" width="274" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="3317" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="size_mail_fit.png">
+                                <rect key="frame" x="36" y="85" width="304" height="508"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" id="3318" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="36" y="42" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Btn_sizeInfo_TouchUpInside:" destination="8" id="3351" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3319" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" customClass="ButtonBordered" buttonType="roundedRect">
+                                <rect key="frame" x="37" y="621" width="145" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="BtnSave_TouchUpInside:" destination="8" id="3358" eventType="touchUpInside"/>
+                                </connections>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="BorderWidth ">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="3324" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="D, 0 cm">
+                                <rect key="frame" x="262" y="95" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="3325" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="E, 0 cm">
+                                <rect key="frame" x="66" y="178" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="3330" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="G, 0 cm">
+                                <rect key="frame" x="262" y="178" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="3331" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="A, 0 cm">
+                                <rect key="frame" x="262" y="224" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="3334" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="B, 0 cm">
+                                <rect key="frame" x="262" y="270" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="3335" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="F, 0 cm">
+                                <rect key="frame" x="262" y="360" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="3336" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="C, 0 cm">
+                                <rect key="frame" x="66" y="360" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="3337" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="H, 0 cm">
+                                <rect key="frame" x="66" y="500" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3357" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" customClass="ButtonBordered">
+                                <rect key="frame" x="190" y="621" width="145" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="BtnCancel_TouchUpInside:" destination="8" id="3359" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="3758" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="36" y="84" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="chIsFemale_ValueChanged:" destination="8" id="3759" eventType="valueChanged"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <segue id="2709" destination="BYZ-38-t0r" kind="show" identifier="CalcToAccount"/>
+                        <outlet property="txtUserName" destination="3108" id="name-outlet-3108"/>
+                        <outlet property="txt_D" destination="3324" id="name-outlet-3324"/>
+                        <outlet property="txt_E" destination="3325" id="name-outlet-3325"/>
+                        <outlet property="txt_G" destination="3330" id="name-outlet-3330"/>
+                        <outlet property="txt_A" destination="3331" id="name-outlet-3331"/>
+                        <outlet property="txt_B" destination="3334" id="name-outlet-3334"/>
+                        <outlet property="txt_F" destination="3335" id="name-outlet-3335"/>
+                        <outlet property="txt_C" destination="3336" id="name-outlet-3336"/>
+                        <outlet property="txt_H" destination="3337" id="name-outlet-3337"/>
+                        <outlet property="btn_sizeInfo" destination="3318" id="name-outlet-3318"/>
+                        <outlet property="btnSave" destination="3319" id="name-outlet-3319"/>
+                        <outlet property="btnCancel" destination="3357" id="name-outlet-3357"/>
+                        <segue id="3447" destination="2893" kind="show" identifier="CalcToBrand"/>
+                        <outlet property="chIsFemale" destination="3758" id="name-outlet-3758"/>
+                        <outlet property="imgSize" destination="3317" id="name-outlet-3317"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-593" y="-375"/>
+        </scene>
+        <scene sceneID="2892">
+            <objects>
+                <viewController storyboardIdentifier="BrandVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2893" customClass="BrandVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2920"/>
+                        <viewControllerLayoutGuide type="bottom" id="2921"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2904">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="2901" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="26" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Brands" id="2905">
+                                        <barButtonItem key="leftBarButtonItem" id="3022" systemItem="reply">
+                                            <connections>
+                                                <action selector="btnBack_Click:" destination="2893" id="3023"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="3024" systemItem="compose">
+                                            <connections>
+                                                <action selector="btnEditAcoount_Click:" destination="2893" id="3025"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <constraints>
+                                    <constraint id="2906" firstAttribute="width" constant="375"/>
+                                </constraints>
+                                <color key="barTintColor" colorSpace="calibratedRGB" red="0.15686274509803921" green="0.35294117647058826" blue="0.30588235294117649" alpha="1"/>
+                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" id="2899" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="70" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2893" id="2907"/>
+                                </connections>
+                                <constraints>
+                                    <constraint id="2908" firstAttribute="width" constant="375"/>
+                                </constraints>
+                                <color key="barTintColor" colorSpace="calibratedRGB" red="0.15686274509803921" green="0.35294117647058826" blue="0.30588235294117649" alpha="1"/>
+                                <rect key="contentStretch" x="0" y="0.0" width="1" height="1"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="2903" translatesAutoresizingMaskIntoConstraints="NO" separatorStyle="default">
+                                <rect key="frame" x="-9" y="117" width="376" height="550"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes/>
+                                <constraints>
+                                    <constraint id="3539" firstAttribute="width" constant="376"/>
+                                    <constraint id="3540" firstAttribute="height" constant="550"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint id="2913" firstItem="2904" firstAttribute="trailing" secondItem="2901" secondAttribute="trailing"/>
+                            <constraint id="2914" firstItem="2901" firstAttribute="top" secondItem="2904" secondAttribute="top" constant="26"/>
+                            <constraint id="2915" firstItem="2904" firstAttribute="trailing" secondItem="2899" secondAttribute="trailing"/>
+                            <constraint id="2916" firstItem="2899" firstAttribute="top" secondItem="2904" secondAttribute="top" constant="70"/>
+                            <constraint id="2919" firstItem="2901" firstAttribute="centerX" secondItem="2904" secondAttribute="centerX"/>
+                            <constraint id="3537" firstItem="2903" firstAttribute="leading" secondItem="2904" secondAttribute="leading" constant="-9"/>
+                            <constraint id="3538" firstItem="2904" firstAttribute="bottom" secondItem="2903" secondAttribute="bottom"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="2895" id="2894"/>
+                        <outlet property="searchDisplayController" destination="2897" id="2896"/>
+                        <outlet property="searchBar" destination="2899" id="2898"/>
+                        <outlet property="navBar" destination="2901" id="2900"/>
+                        <outlet property="tableView" destination="2903" id="2902"/>
+                        <segue id="3076" destination="BYZ-38-t0r" kind="show" identifier="BrandToAccount"/>
+                        <segue id="3718" destination="3608" kind="show" identifier="BrandToClothes"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2922" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="2895">
+                    <connections>
+                        <outlet property="delegate" destination="2893" id="2923"/>
+                        <outlet property="searchBar" destination="2925" id="2924"/>
+                        <outlet property="searchContentsController" destination="2893" id="2926"/>
+                        <outlet property="searchResultsDataSource" destination="2893" id="2927"/>
+                        <outlet property="searchResultsDelegate" destination="2893" id="2928"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="2897">
+                    <connections>
+                        <outlet property="delegate" destination="2893" id="2929"/>
+                        <outlet property="searchBar" destination="2899" id="2930"/>
+                        <outlet property="searchContentsController" destination="2893" id="2931"/>
+                        <outlet property="searchResultsDataSource" destination="2893" id="2932"/>
+                        <outlet property="searchResultsDelegate" destination="2893" id="2933"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="595" y="140"/>
+        </scene>
+        <scene sceneID="3607">
+            <objects>
+                <viewController storyboardIdentifier="ClothesVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3608" customClass="ClothesVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3641"/>
+                        <viewControllerLayoutGuide type="bottom" id="3642"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3621">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="3616" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="26" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Clothes" id="3622">
+                                        <barButtonItem key="leftBarButtonItem" id="3623" systemItem="reply">
+                                            <connections>
+                                                <action selector="BtnBack_Activated:" destination="3608" id="3661"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="3625" systemItem="compose">
+                                            <connections>
+                                                <action selector="BtnUpdate_Activated:" destination="3608" id="3660"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <constraints>
+                                    <constraint id="3627" firstAttribute="width" constant="375"/>
+                                </constraints>
+                                <color key="barTintColor" colorSpace="calibratedRGB" red="0.15686274509803921" green="0.35294117647058826" blue="0.30588235294117649" alpha="1"/>
+                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" id="3614" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="70" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3608" id="3628"/>
+                                </connections>
+                                <constraints>
+                                    <constraint id="3629" firstAttribute="width" constant="375"/>
+                                </constraints>
+                                <color key="barTintColor" colorSpace="calibratedRGB" red="0.15686274509803921" green="0.35294117647058826" blue="0.30588235294117649" alpha="1"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="3618" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="-9" y="117" width="376" height="550"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3630" rowHeight="56">
+                                        <rect key="frame" x="0.0" y="28" width="376" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3630" id="3631">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="55"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <constraints>
+                                    <constraint id="3632" firstAttribute="width" constant="376"/>
+                                    <constraint id="3633" firstAttribute="height" constant="550"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint id="3634" firstItem="3621" firstAttribute="trailing" secondItem="3616" secondAttribute="trailing"/>
+                            <constraint id="3635" firstItem="3616" firstAttribute="top" secondItem="3621" secondAttribute="top" constant="26"/>
+                            <constraint id="3636" firstItem="3621" firstAttribute="trailing" secondItem="3614" secondAttribute="trailing"/>
+                            <constraint id="3637" firstItem="3614" firstAttribute="top" secondItem="3621" secondAttribute="top" constant="70"/>
+                            <constraint id="3638" firstItem="3616" firstAttribute="centerX" secondItem="3621" secondAttribute="centerX"/>
+                            <constraint id="3639" firstItem="3618" firstAttribute="leading" secondItem="3621" secondAttribute="leading" constant="-9"/>
+                            <constraint id="3640" firstItem="3621" firstAttribute="bottom" secondItem="3618" secondAttribute="bottom"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="3610" id="3609"/>
+                        <outlet property="searchDisplayController" destination="3612" id="3611"/>
+                        <outlet property="searchBar" destination="3614" id="3613"/>
+                        <outlet property="navBar" destination="3616" id="3615"/>
+                        <outlet property="tableView" destination="3618" id="3617"/>
+                        <segue id="3619" destination="3620" kind="show" identifier="BrandToAccount"/>
+                        <outlet property="btnUpdate" destination="3625" id="name-outlet-3625"/>
+                        <outlet property="btnBack" destination="3623" id="name-outlet-3623"/>
+                        <segue id="3750" destination="2893" kind="show" identifier="ClothesToBrand"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3643" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="3610">
+                    <connections>
+                        <outlet property="delegate" destination="3608" id="3644"/>
+                        <outlet property="searchBar" destination="3646" id="3645"/>
+                        <outlet property="searchContentsController" destination="3608" id="3647"/>
+                        <outlet property="searchResultsDataSource" destination="3608" id="3648"/>
+                        <outlet property="searchResultsDelegate" destination="3608" id="3649"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="3612">
+                    <connections>
+                        <outlet property="delegate" destination="3608" id="3650"/>
+                        <outlet property="searchBar" destination="3614" id="3651"/>
+                        <outlet property="searchContentsController" destination="3608" id="3652"/>
+                        <outlet property="searchResultsDataSource" destination="3608" id="3653"/>
+                        <outlet property="searchResultsDelegate" destination="3608" id="3654"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1109" y="387"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="retina47"/>
+    </simulatedMetricsContainer>
+    <resources>
+        <image name="next.png" width="150" height="150"/>
+        <image name="new_balance.png" width="156" height="156"/>
+        <image name="default_account.png" width="500" height="500"/>
+        <image name="sizes.png" width="200" height="450"/>
+        <image name="size_female.png" width="200" height="450"/>
+        <image name="size_female_fit.png" width="200" height="450"/>
+        <image name="size_mail_fit.png" width="200" height="450"/>
+        <image name="shoes.png" width="160" height="93"/>
+        <image name="sweater.png" width="150" height="150"/>
+        <image name="tshirt.png" width="147" height="160"/>
+        <image name="shirt.png" width="120" height="146"/>
+        <image name="jacket.png" width="125" height="137"/>
+        <image name="pants.png" width="150" height="150"/>
+        <image name="adidas.png" width="150" height="99"/>
+        <image name="general.png" width="67" height="61"/>
+        <image name="nike.png" width="162" height="121"/>
+        <image name="puma.png" width="179" height="159"/>
+        <image name="reebok.png" width="169" height="150"/>
+        <image name="topsecret.png" width="67" height="61"/>
+        <image name="cropp.png" width="150" height="150"/>
+        <image name="jacket_icon.png" width="150" height="150"/>
+        <image name="pants_icon.png" width="225" height="213"/>
+        <image name="shirt_icon.png" width="140" height="157"/>
+        <image name="shoes_icon.png" width="161" height="151"/>
+        <image name="sweater_icon.png" width="298" height="290"/>
+        <image name="tshirt_icon.png" width="228" height="220"/>
+    </resources>
+</document>
